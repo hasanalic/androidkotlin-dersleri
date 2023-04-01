@@ -1,0 +1,134 @@
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+body {
+    background-color: #232323;
+    font-family: sans-serif;
+
+}
+.top-name {
+    width: auto;
+    background: #232323;
+    text-align: center;
+}
+.top-name p {
+    color: white;
+    margin: 20px;
+    padding: 12px;
+    font-size: 40px;
+    letter-spacing: 2px;
+}
+.auth {
+    color: #b2ff00;
+    background-color: wheat;
+    text-align: right;
+    border-radius: 24px;
+    border-bottom-left-radius: 0px;
+    border-bottom-right-radius: 0px;
+    padding: 4px;
+    margin-left: 25px;
+    margin-right: 25px;
+}
+.auth a {
+    color: #232323;
+    text-decoration: none;
+    font-size: 18px;
+    margin: 15px;
+    padding: 15px;
+}
+.menu-bar {
+    background-color: #414141;
+    text-align: center;
+    border-radius: 24px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+    box-shadow: 0 8px 12px rgba(88, 80, 80, 0.3);
+}
+.menu-bar ul {
+    display: inline-flex;
+    list-style: none;
+}
+.menu-bar ul li {
+    width: 190px;
+    margin: 15px;
+    padding: 15px;
+}
+.menu-bar ul li a {
+    text-decoration: none;
+    color: white;
+}
+.active, .menu-bar ul li:hover {
+    background: #4e4e4e;
+    border-radius: 12px;
+}
+.menu-bar .fas {
+    margin-right: 10px;
+}
+.sub-menu-1 {
+    display: none;
+}
+.menu-bar ul li:hover .sub-menu-1 {
+    display: block;
+    position: absolute;
+    background: #414141;
+    margin-top: 15px;
+    margin-left: -15px;
+    font-size: 13px;
+    box-shadow: 0 8px 16px rgba(53, 52, 52, 0.3);
+}
+.menu-bar ul li:hover .sub-menu-1 ul {
+    display: block;
+}
+.menu-bar ul li:hover .sub-menu-1 ul li {
+    width: 150px;
+    padding: 10px;
+    border-bottom: 2px solid #fff;
+    background: transparent;
+    text-align: left;
+    border-radius: 0px;
+    cursor: pointer;
+}
+.menu-bar ul li:hover .sub-menu-1 ul li a:hover {
+    color: #b2ff00;
+}
+.main-body {
+    background: #414141;
+    margin-top: 50px;
+    margin-left: 140px;
+    margin-right: 140px;
+    padding: 30px;
+    color: white;
+    box-shadow: 0 8px 12px rgba(88, 80, 80, 0.3);
+}
+h1 {
+    color: wheat;
+    font-family: Ariel, 'Times New Roman';
+    text-decoration: underline;
+    letter-spacing: 1px;
+}
+h3 {
+    color: wheat;
+}
+.element {
+    margin-top: 20px;
+    padding: 20px;
+}
+.element-1 {
+    margin-top: 50px;
+    padding: 20px;
+}
+.element-1 p, .element p {
+    margin-top: 30px;
+    letter-spacing: 1px;
+    line-height: 24px;
+}
+.center {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 50%;
+}

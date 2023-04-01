@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Android - Kotlin Dersleri</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+</head>
+
+<body>
+    <div class="top-name">
+        <p>Android - Kotlin Dersleri</p>
+    </div>
+    <div class="auth"><a href="login.html">Giriş / Kayıt</a></div>
+    <div class="menu-bar">
+        <ul>
+            <li><a href="index.html"><i class="fas fa-home"></i>Ana Sayfa</a></li>
+            <li><a href="androidStudio.html"><i class="fas fa-microchip"></i>Android</a>
+                <div class="sub-menu-1">
+                    <ul>
+                        <li id="android"><a href="androidStudio.html">Android</a></li>
+                        <li id="kurulum"><a href="androidStudio.html">Kurulum</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li> <a href="kotlin.html"><i class="fas fa-code"></i>Kotlin</a></li>
+            <li><a href="libraries.html"><i class="fas fa-book"></i>Kütüphaneler</a>
+                <div class="sub-menu-1">
+                    <ul>
+                        <li><a href="libraries.html">RxJava</a></li>
+                        <li><a href="libraries.html">Room</a></li>
+                        <li><a href="libraries.html">Retrofit</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="active"><a href="jcompose.html"><i class="fas fa-cubes"></i>Jetpack Compose</a></li>
+            <li><a href="coroutine.html"><i class="fas fa-server"></i>Coroutine</a></li>
+        </ul>
+    </div>
+
+    <div class="main-body">
+        <div class="element">
+            <img src="/images/jetpack.png" alt="android" class="center"> <br><br>
+            <h1 class="title-1">Nedir?</h1>
+            <p>
+                - Native UI (kullanıcı arayüzü) oluşturmak için Android'in modern toolkit’idir. Android’de UI
+                geliştirmeyi basitleştirir ve hızlandırır. <br>
+                - Android uygulama geliştirirken kullandığımız view elemanlarımız kalıtım yoluyla bir üstteki view
+                elemanından alınarak kullanılır. <br>
+                - Uygulamanın durumu değiştikçe, mevcut verileri görüntülemek için UI hiyerarşisinin güncellenmesi
+                gerekmektedir. Görünümleri manuel olarak güncellemek hata olasılığını arttırıyordu. Compose ise temel
+                veriler değiştiğinde sizin için kullanıcı arayüzü hiyerarşisini otomatik olarak güncelleyerek kullanıcı
+                arayüzlerini kolay ve hızlı bir şekilde oluşturmanızı kolaylaştırır. <br>
+                - Jetpack Compose elemanları kalıtım süreçlerine dahil etmeden direkt kullanılır hale getirdi. Kotlin’de
+                top level function olarak tanımlanan fonksiyonlarda olduğu gibi bir sınıfa bağımlı değil. <br>
+                - Compose’da kullanılmak istenen widget, activity ya da Fragment içinde direkt kullanılabiliyor. <br>
+                - Android uygulama geliştirirken kullandığımız layoutları onCreate içinde
+                “setContentView(R.layout.activity_main)”diyerek tanımlıyorduk. Compose ile xml inflate etmek yerine
+                direkt Composoble fonksiyon çağrılıyor. setContent{} blokları arasında layout işlemleri yapılır.
+                <br><br><br>
+            <h3>Composable Functions</h3>
+            <p>
+                - @Composoble ile annotate edilen bir fonksiyon türüdür. @Composable annotion’u bu fonksiyonun bir
+                composable funciton olduğunu yani bir adet view ögesi olduğunu tanımlamaktadır. @Composable olan
+                fonksiyonların sadece bir sorumluluğu bulunmaktadır. <br>
+                - Yazdığımız top level fonksiyon bir özellikler kümesi içeriyor ve ui kısmında da bir ögeyi tanımlıyorsa
+                bu fonksiyon composable fonksiyon olarak tanımlanır ve @Composable annotionu ile açıklanmalıdır.<br>
+                - View ögelerinin özelliklerinin tanımlamaları yapılır. Örneğin, textview oluşturacaksak bunun
+                text,colour,style,size gibi özelliklerini tanımlarız. (“ctrl + fonksiyon_adı” yaparak composable
+                fonksiyonun özelliklerine bakabiliriz.)
+                <br><br><br>
+                <img src="/codes/code10.png" alt="code4"> <br><br><br>
+
+            </p>
+            <h3>State Management</h3>
+            <p>
+                - Bir uygulamadaki “state” zamanla değişebilen bir değerdir. Android uygulamaları bu state’leri
+                kullanıcıya gösterir. (Örneğin; Snackbars, butona tıklandığında animasyon değişikliği, kullanıcının yazı
+                yazması vs.) <br>
+                - Bir “state” değiştiğinde composable’ı update edip UI’da tekrar göstermemiz lazım (Recomposition)
+                <br><br><br>
+                <img src="/codes/code11.png" alt="code11"> <img src="/codes/code12.png" alt="code11"><br><br><br>
+            </p>
+            <h3>State Hoisting</h3>
+            <p>
+                - Oluşturulan “state”lerin (mutableState) composable içinde tutulmaması gerekir. (bunları başka yerde
+                kullanmak için.) <br>
+                - “SpecialTextField” adındaki fonksiyon bir TextField içeriyor. TextField, bir tane mutable String
+                değeri ve bir fonksiyon parametrelerini istiyor. SpecialTextField fonksiyonundan gelen string ve lambda
+                değişkenleri direkt TextField’ verilir. <br>
+                - Daha sonra en üst composable’da (MainScreen) mutableString oluşturup SpecialTextField’a parametre
+                olarak veriyoruz ve son parametreyi lambda şeklinde yazıp verilen “it” String’i “textString”e
+                eşitliyoruz.
+                <br><br><br>
+                <img src="/codes/code13.png" alt="code11"> <img src="/codes/code14.png" alt="code11">
+            </p>
+        </div>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Android - Kotlin Dersleri</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+</head>
+
+<body>
+    <div class="top-name">
+        <p>Android - Kotlin Dersleri</p>
+    </div>
+    <div class="auth"><a href="login.html">Giriş / Kayıt</a></div>
+    <div class="menu-bar">
+        <ul>
+            <li><a href="index.html"><i class="fas fa-home"></i>Ana Sayfa</a></li>
+            <li><a href="androidStudio.html"><i class="fas fa-microchip"></i>Android</a>
+                <div class="sub-menu-1">
+                    <ul>
+                        <li id="android"><a href="androidStudio.html">Android</a></li>
+                        <li id="kurulum"><a href="androidStudio.html">Kurulum</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li class="active"> <a href="kotlin.html"><i class="fas fa-code"></i>Kotlin</a></li>
+            <li><a href="libraries.html"><i class="fas fa-book"></i>Kütüphaneler</a>
+                <div class="sub-menu-1">
+                    <ul>
+                        <li><a href="libraries.html">RxJava</a></li>
+                        <li><a href="libraries.html">Room</a></li>
+                        <li><a href="libraries.html">Retrofit</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li><a href="jcompose.html"><i class="fas fa-cubes"></i>Jetpack Compose</a></li>
+            <li><a href="coroutine.html"><i class="fas fa-server"></i>Coroutine</a></li>
+        </ul>
+    </div>
+
+    <div class="main-body">
+        <div class="element">
+            <img src="/images/kotlin.png" alt="android" class="center"> <br><br>
+            <h1 class="title-1">Genel Bilgiler</h1>
+            <p>
+                - Kotlin, 2010 yılında JetBrains firması tarafından ortaya çıktı. 19 Temmuz 2011 yılında JVM Language
+                Summit etkinliğinde duyuruldu. <br>
+                - Kotlin’in ilk geliştirmesini Rusya merkezli bir şirket olan JetBrains’in yazılımcıları tarafından
+                yapılmıştır. Kotlin’in ismi ise Rusyada bulunan Kotlin adasından gelmektedir.<br>
+                - Kotlin, statik bir programlama dilidir.<br>
+                - Nesneye yönelimli (object oriented) fonksiyonel bir dildir. Java, C# ve C++ gibi nesne yönelimli bir
+                programlama dilidir.<br>
+                - Kotlin, Java’ya oranla daha kısa ve daha özgün şekilde kodlama yapılmaktadır.<br>
+                - Kotlin, Java’ya göre daha güvenli bir dildir. Peki bu güvenlik ne anlam ifade ediyor ? 1965 yılından
+                beri nesne tabanlı programlarda kullanılan ve milyar dolarlık zararlara yol açan “null verisi” Kotlin
+                ile birlikte daha güvenli olarak ele alınıp sisteme zarar vermesi engellenmiştir.<br>
+                - Sunucu ve istemci tabanlı web uygulamaları geliştirmeyi desteklemektedir.<br>
+                - Kotlin ve Java birlikte çalışmaktadır. Javanın içinde Kotlin’i , Kotlin’in içinde ise Javayı
+                kullanabilirsiniz. Android Studio içinde yazmış olduğunuz Java kodunu kolaylıkla Kotlin diline
+                çevirebilirsiniz.<br>
+                - Kotlin, Apache 2.0 lisansı altında geliştirilen açık kaynak kodlu bir projedir desteklere ve
+                yardımlara açıktır.<br>
+                - Projenin kaynak kodları herkese açıktır. “https://github.com/jetbrains/kotlin”.<br>
+                <b>Not</b>: Statik yazılan, bir programcının değişkenleri kullanmadan önce açıkça bildirmesi gereken bir
+                programlama dilidir. Statik olarak yazılan programlama dilinde bir değişken atabilseniz de, bunun başka
+                bir değişkene dönüştürülmeyeceğini not etmek önemlidir. Örn: C, C ++, Go, Haskell, Kotlin, Rust, Swift
+                ve Java.<br>
+                <b>Not</b>: Dinamik yazımda, tüm değişkenlerin kullanılmadan önce tanımlanması gerekir. Değişkenlerin
+                belirli
+                bir türe yazılması gerekmez. Örn: Python, JavaScript, Perl, Ruby, PHP, Kotlin ve Lua’dır.
+                <b>Not</b>: Statik olarak yazılmış programlama dilleri çalıştırıldığında derlenir. Her kod satırı
+                çalışma
+                zamanından önce çevrilir. Öte yandan, dinamik olarak yazılmış programlama dilleri çalıştırıldığında
+                yorumlanmaktadır.<br>
+                <b>Not</b>: Statik olarak yazılmış programlama dillerinde, türler (int,string vs) çalışma zamanından
+                önce
+                kontrol edilir. Kodun uygun olmayan bir tipe sahip olduğu tespit edilirse, çalışma süresinden önce bir
+                hata atılır. Dinamik olarak yazılmış programlama dilleri için, kodun yürütülmesi sırasında türler
+                kontrol edilir. Kod satırında bir hata olsa bile, bir hata atılmaz. Yani statik programlama dilleri daha
+                performanslıdır.<br><br>
+                <img src="/images/kotlin-anywhere.jpg" alt="kotlin-anywhere" style="width: 900px; height: 450px;"> <br><br>
+            </p>
+        </div>
+        <div class="element-1">
+            <h1 class="title-1">Syntax</h1>
+            <p>
+                Kotlin, modern, statik tipli bir programlama dilidir. Java diline benzeyen bir syntax'a sahiptir ve Java
+                ile büyük ölçüde uyumludur. Kotlin, Java'dan daha kısa ve daha okunabilir kod yazılmasına olanak tanır.
+                Aşağıda, Kotlin dilinin birkaç örnek syntax'ı bulunmaktadır: <br><br>
+                - Değişkenler: Kotlin dilinde, değişkenler "var" veya "val" anahtar kelimeleri ile tanımlanır. Örneğin:
+                <br><br>
+                <img src="/codes/code1.png" alt="code1"> <br><br>
+                - Fonksiyonlar: Kotlin dilinde, fonksiyonlar "fun" anahtar kelimesi ile tanımlanır ve girdi
+                parametreleri ile birlikte yazılır. Örneğin: <br><br>
+                <img src="/codes/code2.png" alt="code2"> <br><br>
+                - Sınıflar: Kotlin dilinde, sınıflar "class" anahtar kelimesi ile tanımlanır. Örneğin: <br><br>
+                <img src="/codes/code3.png" alt="code3"> <br><br>
+                Bu örnekler, Kotlin dilinin temel syntax'ını göstermektedir. Kotlin dilini öğrenmek isteyenler için,
+                dilin daha detaylı özelliklerine ve kullanım şekillerine ait eğitsel kaynakları inceleyebilirler.
+            </p>
+        </div>
+    </div>
+
+</body>
+
+</html>

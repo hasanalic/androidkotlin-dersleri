@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Android - Kotlin Dersleri</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css">
+</head>
+
+<body>
+    <div class="top-name">
+        <p>Android - Kotlin Dersleri</p>
+    </div>
+    <div class="auth"><a href="login.html">Giriş / Kayıt</a></div>
+    <div class="menu-bar">
+        <ul>
+            <li><a href="index.html"><i class="fas fa-home"></i>Ana Sayfa</a></li>
+            <li><a href="androidStudio.html"><i class="fas fa-microchip"></i>Android</a>
+                <div class="sub-menu-1">
+                    <ul>
+                        <li id="android"><a href="androidStudio.html">Android</a></li>
+                        <li id="kurulum"><a href="androidStudio.html">Kurulum</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li> <a href="kotlin.html"><i class="fas fa-code"></i>Kotlin</a></li>
+            <li class="active"><a href="libraries.html"><i class="fas fa-book"></i>Kütüphaneler</a>
+                <div class="sub-menu-1">
+                    <ul>
+                        <li><a href="libraries.html">RxJava</a></li>
+                        <li><a href="libraries.html">Room</a></li>
+                        <li><a href="libraries.html">Retrofit</a></li>
+                    </ul>
+                </div>
+            </li>
+            <li><a href="jcompose.html"><i class="fas fa-cubes"></i>Jetpack Compose</a></li>
+            <li><a href="coroutine.html"><i class="fas fa-server"></i>Coroutine</a></li>
+        </ul>
+    </div>
+
+    <div class="main-body">
+        <div class="element">
+            <img src="/images/rxjava.png" alt="android" class="center"> <br><br>
+            <h1 class="title-1">RxJava</h1>
+            <p>
+                - RxJava, JVM için geliştirilmiş bir reactive programlama kütüphanesidir. <br>
+                - Reactive Extensions (ReactiveX), “observable” değişkenleri kullanarak “asenkron” ve “event-based(olay
+                tabanlı)” programlar oluşturmayı sağlayan bir paradigmadır.<br>
+                - ReactiveX olay ve data değişikliklerini takip etmek için “observer” yapısını(pattern) kullanır.<br>
+                - Observer pattern küçük multi threadler oluşturmanızı,sıralı işlemler yapmanızı,verilere filtre
+                uygulamanızı sağlar. Tüm bunları yaparken de program akışınızı kilitlemez.<br>
+                - Asenkron(asynchronous), program parçacıklarının aynı anda farklı katmanlarda çalışmasıdır.<br>
+                - Klasik program akışı yukarıdan aşağıya doğru gerçekleşir,ancak event-based programlarda akışı olay
+                belirler. Kod parçası çağrıldığında çalışır ve işlemi farklı bir katmanda yapıp sonucu iletir.Bu esnada
+                program akmaya devam eder.<br><br><br>
+            <h3>Temel Unsurlar</h3>
+            <p>
+                - Flowable,Observable,Single,Completable : Bu yapılar yukarıda bahsettiğimiz observable unsurunun
+                parçalarıdır. Veri üzerinde işlemler yapıp,dışa aktarırlar. <br>
+                - Subsciption : Observable ile Observer arasındaki bağlantıyı sağlar. <br>
+                - Operator : Özelleşmiş tipleri ile veri üzerinde sıralama,filtreleme gibi birçok işlem yapmanızı
+                sağlar. <br>
+                - Scheduler : İşlemin gerçekleştiği katmanlardır. <br>
+                - Subscriber : İşlemin tamamlanmasının ardından cevabın gönderileceği yerdir. <br>
+                - Observable: N elemanlı bir veriyi iletmek için kullanılabilir. İşlem bitince hata yada başarılı
+                şeklinde dönüş yapar. Observable dinleyicisi olarak Observer kullanılır.<br>
+                - Flowable: Observable gibi n elemanlı veriyi iletmek için kullanılır. Observable’dan tek farkı
+                “backpressure strategy” yapısına sahip olmasıdır. Eklenenden fazla gelebilecek datalardaki taşmaları
+                önlemek için kullanılır.<br>
+                - Single: Sadece bir değeri iletmek için kullanılır.O değeri başarıyla iletir yada hata mesajı ile
+                döner. onComplete metodu yoktur.<br>
+                - Maybe: Single gibi sadece bir değeri iletmek için kullanılır. Singledan farkı değeri dönmek zorunda
+                değildir. Değer dönerse onSuccess metoduna düşer. Şayet hata alırsa da diğer tiplerde olduğu gibi
+                onError metoduna düşer.<br>
+                - Completable: Completable herhangi bir data iletmez. İşlemin başarıyla sonuçlanıp sonuçlanmamasına göre
+                onComplete yada onError metodu çalışır.<br><br><br>
+            <div>
+                <img src="/codes/code4.png" alt="code4"> <img src="codes/code5.png" alt="code5">
+            </div>
+
+            </p>
+            <h3>Veri Çekme</h3>
+            <p>
+                - “userDao.getAll()” metodundan gelen verileri(list) handleResponse metodu ile alıp adapter’a
+                yolluyoruz.<br><br><br>
+            <div>
+                <img src="/codes/code6.png" alt="code6">
+            </div>
+
+            </p>
+            </p><br><br><br>
+        </div>
+        <div class="element-1">
+            <img src="/images/room.png" alt="room" class="center"><br>
+            <h1 class="title-1">Room</h1>
+            <p>
+                - Room kütüphanesi SQLite'ın tüm gücünden yararlanırken daha sağlam veritabanı erişimine izin vermek
+                için SQLite üzerinde bir soyutlama katmanı(abstraction layer) sağlar. <br>
+                - Room kütüphanesi ana başlık olarak üç bölüme ayrılıyor.<br>
+                - Entity -> Database modelimizi(table) temsil ediyor.<br>
+                - DAO -> (Data Access Object),Interface olarak kullanılır ve bütün database
+                işlemleri(ekleme,silme,güncelleme,sorgu) bu interface içerisinde yapılır.<br>
+                - Room Database -> Bu sınıf sayesinde bütün işlemleri yönetebiliyoruz.<br><br><br>
+
+            <h3>Entity</h3>
+            <p>
+                - Her User instance’sı, uygulamanın veritabanındaki bir “user” table’ındaki bir row’u temsil eder. <br>
+                - “@ColumnInfo” etiketiyle column’ları oluşturuyoruz. <br>
+                - “@PrimaryKey” her nesnenin birbirinden farklı id oluşturmasını sağlıyor (“autoGenerate = true” kodu
+                gerekli)<br><br>
+                <img src="/codes/code7.png" alt="code6"><br><br><br>
+            <h3>DAO</h3>
+            <p>
+                - UserDao, uygulamanın geri kalanının “user” table’daki verilerle etkileşim kurmak için kullandığı
+                yöntemleri sağlar.<br><br>
+                <img src="/codes/code8.png" alt="code6"><br><br><br>
+            <h3>Database</h3>
+            <p>
+                - UserDatabase, veritabanı yapılandırmasını tanımlar ve uygulamanın kalıcı verilere ana erişim noktası
+                olarak hizmet eder. <br>
+                - “entities” içerisine kullandığımız model sınıflar(table) yazılır. <br>
+                - UserDatabase sınıfı sadece Dao sınıflarını döndüren metoda sahiptir.
+                <br><br>
+                <img src="/codes/code8.png" alt="code6">
+            </p>
+            </p>
+        </div>
+        <div class="element-1">
+            <img src="/images/retrofit.png" alt="room" class="center"><br>
+            <h1 class="title-1">Retrofit</h1>
+            <p>
+                - Bir network kütüphanesidir. Retrofit açık kaynak kodlu bir rest istemcisidir. <br>
+                - REST servisler ile çalışmamız gereken durumlarda işimizi kolaylaştıran bir networking kütüphanesidir.
+                Not: REST; (Representational State Transfer) uzak sistemdeki mantıksal kaynakları HTTP protokolü ile
+                GET, POST, PUT, PATCH, DELETE methodlarını çağırarak kullanmaktır.<br>
+                - http istekleri için OkHttp kütüphanesi kullanmaktadır. Android uygulama üzerinden, sunucuya gönderilen
+                Request’ler ile talepte bulunuruz. Sunucu bu istek karşısında, Response olarak bir JSON verisi
+                gönderir.<br>
+                - Retrofit’in bu kadar popüler olmasında REST API’lara kolaylıkla erişebilme, test edilebilir ve kolay
+                kullanımı etkendir.<br>
+                - AsyncTask yapısı ile yaptığımız isteklerde aşırı bir yavaş çalışma problemi ortaya çıkmıştı. Ayrıca
+                çoklu asynchronous işlemlerinde , ön plandaki kontroller komplike bir hale dönüşmüştü.
+                <br><br><br>
+
+            <h3>Model Oluşturma</h3>
+            <p>
+                - CryptoModel adında bir data class oluşturuyoruz.
+                - JSON formatında gelen verilerdeki value isimlerini direkt değişken olarak yazabiliriz.
+                (@SerializedName’e gerek yok.)
+                <br><br><br>
+            <h3>Verileri Çekme</h3>
+            <p>
+                <img src="/codes/code9.png" alt="code6"><br><br><br>
+            
+            </p>
+        </div>
+    </div>
+
+</body>
+
+</html>
