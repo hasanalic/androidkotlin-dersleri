@@ -1,3 +1,4 @@
 # web-project
-HTML - CSS - JS
-Firebase - Authentication
+HTML - CSS - JS 
+
+Firebase Authentication
