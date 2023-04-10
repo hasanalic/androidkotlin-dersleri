@@ -1,4 +1,3 @@
-# web-project
-HTML - CSS - JS 
+# Android - Kotlin Dersleri
 
 Firebase Authentication
